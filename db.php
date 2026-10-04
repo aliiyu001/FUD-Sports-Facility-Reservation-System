@@ -9,16 +9,17 @@
  * mysqli object with prepared statements.
  */
 
-$DB_HOST = 'localhost';
-$DB_USER = 'root';
-$DB_PASS = ''; // XAMPP default: empty password
-$DB_NAME = 'fud_sports_reservation';
+$DB_HOST = getenv('DB_HOST') ?: 'localhost';
+$DB_USER = getenv('DB_USER') ?: 'root';
+$DB_PASS = getenv('DB_PASS') ?: ''; // XAMPP default: empty password
+$DB_NAME = getenv('DB_NAME') ?: 'fud_sports_reservation';
+$DB_PORT = (int) (getenv('DB_PORT') ?: 3306);
 
 // Use exceptions for mysqli errors so problems surface immediately
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 try {
-    $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
+    $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME, $DB_PORT);
     $conn->set_charset('utf8mb4');
 } catch (mysqli_sql_exception $e) {
     // Do not leak detailed DB errors to end users in a real production
