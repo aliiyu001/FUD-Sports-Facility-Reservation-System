@@ -1,0 +1,166 @@
+/* ============================================================
+   FUD Sports Facility Reservation System
+   Custom styles (used alongside Bootstrap 5 via CDN)
+   ============================================================ */
+
+:root {
+    --fud-green: #0a5c36;
+    --fud-green-dark: #073d24;
+    --fud-gold: #d4af37;
+}
+
+body {
+    background-color: #f4f6f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ---------- Navbar ---------- */
+.navbar-fud {
+    background-color: var(--fud-green);
+}
+
+.navbar-fud .navbar-brand,
+.navbar-fud .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.navbar-fud .nav-link:hover {
+    color: var(--fud-gold) !important;
+}
+
+.navbar-user-badge {
+    color: #e8e8e8;
+    font-size: 0.85rem;
+}
+
+/* ---------- Cards / summary tiles ---------- */
+.summary-card {
+    border: none;
+    border-radius: 0.6rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.summary-card .summary-number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* ---------- Status badges ---------- */
+.status-badge {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    border-radius: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.status-pending {
+    background-color: #e67e22; /* orange */
+}
+
+.status-approved {
+    background-color: #27ae60; /* green */
+}
+
+.status-rejected {
+    background-color: #c0392b; /* red */
+}
+
+/* ---------- Priority badge ---------- */
+.priority-badge {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    border-radius: 0.4rem;
+    background-color: var(--fud-gold);
+    color: #3a2f00;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/* ---------- Facility status ---------- */
+.facility-available {
+    color: #1e8449;
+    font-weight: 600;
+}
+
+.facility-unavailable {
+    color: #c0392b;
+    font-weight: 600;
+}
+
+/* ---------- Notification bell ---------- */
+.notif-bell-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.notif-count-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: #fff;
+    border-radius: 50%;
+    padding: 1px 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.notif-dropdown {
+    max-height: 360px;
+    overflow-y: auto;
+    min-width: 320px;
+}
+
+.notif-item {
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid #eee;
+    font-size: 0.88rem;
+}
+
+.notif-item.unread {
+    background-color: #eef7f1;
+    font-weight: 600;
+}
+
+.notif-item:last-child {
+    border-bottom: none;
+}
+
+.notif-empty {
+    padding: 1rem;
+    text-align: center;
+    color: #888;
+    font-size: 0.88rem;
+}
+
+/* ---------- Security dashboard: today's reservations ---------- */
+.today-highlight {
+    background-color: #d6ecfa !important;
+}
+
+/* ---------- Misc ---------- */
+.page-title {
+    color: var(--fud-green-dark);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.table thead th {
+    background-color: var(--fud-green);
+    color: #fff;
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .summary-card .summary-number {
+        font-size: 1.5rem;
+    }
+    .notif-dropdown {
+        min-width: 260px;
+    }
+}
