@@ -65,7 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              WHERE email = ? AND successful = 0
                AND attempted_at > (NOW() - INTERVAL ? MINUTE)'
         );
-        $stmt->bind_param('si', $email, LOCKOUT_WINDOW_MINUTES);
+        $lockoutWindowMinutes = LOCKOUT_WINDOW_MINUTES;
+        $stmt->bind_param('si', $email, $lockoutWindowMinutes);
         $stmt->execute();
         $failedCount = (int) $stmt->get_result()->fetch_assoc()['failed_count'];
         $stmt->close();
