@@ -1,12 +1,7 @@
 -- ============================================================
 -- FUD Sports Facility Reservation and Approval Management System
--- Database: fud_sports_reservation
+-- Import this file after selecting the target database.
 -- ============================================================
-
-CREATE DATABASE IF NOT EXISTS fud_sports_reservation
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE fud_sports_reservation;
 
 -- ------------------------------------------------------------
 -- TABLE: users
